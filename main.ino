@@ -1,3 +1,5 @@
+#include "alarm.h"
+#include "lcd.h"
 #include "sms.h"
 #include "pir.h"
 #include "rfid.h"
