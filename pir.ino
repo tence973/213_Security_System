@@ -3,7 +3,7 @@ int val = 0;                 // variable to store the sensor status
 void sensorSetup() {
   pinMode(sensor, INPUT);    // initialize sensor as an input
   Serial.begin(115200);       
-  Serial.println("Sensor warming up...");
+  Serial.println("PIR sensor warming up...");
   delay(30000); // Let the PIR sensor warm up for 30 seconds
 }
 
