@@ -6,7 +6,7 @@ void alarm(){
   while(1)
   {
     //output a frequency
-    for(i=0;i<80;i++)
+    for(int i=0;i<80;i++)
     {
       digitalWrite(buzzer,HIGH);
       delay(1);//wait for 1ms
@@ -14,3 +14,4 @@ void alarm(){
       delay(1);//wait for 1ms
  }
  }
+}

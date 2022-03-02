@@ -1,34 +1,34 @@
 #include "alarm.h"
-#include "lcd.h"
+//#include "lcd.h"
 #include "sms.h"
 #include "pir.h"
 #include "rfid.h"
 int trigger = 0; // True if alarm triggered, false if not triggered
-int arm = 0; // True if armed, false if not armed
-int disarm = 0;
+int armed = 0; // True if armed, false if not armed
+int disarmed = 0;
 // Main file for alarm system
 void setup() {
- lcd();
+ //lcd();
  wifiSetup();
  sensorSetup();
  rfidSetup();
  alarmSetup();
- lcdSetup();
- lcdDisarmed();
+// lcdSetup();
+// lcdDisarmed();
 }
 void loop() {
- int scan() = arm;
+// int scan() = armed;
  while (armed == 1){
- lcdArmed();
+ //lcdArmed();
  int trigger = motionTrigger();
  if (trigger == 1){
   sendSMS();
-  alarm(1);
-  int scan() = disarm;
-  if (disarm == 1){
-    arm = 0;
-    lcdDisarmed();
-    alarm(0);
+  alarm();
+//  int scan() = disarmed;
+  if (disarmed == 1){
+    armed = 0;
+  //  lcdDisarmed();
+    alarm();
     break;
   }
  }

@@ -1,6 +1,5 @@
 #include "rfid.h"
-void rfidSetup() 
-{
+void rfidSetup() {
   Serial.begin(115200);   // Initiate a serial communication
   SPI.begin();      // Initiate  SPI bus
   mfrc522.PCD_Init();   // Initiate MFRC522
@@ -12,17 +11,14 @@ void rfidSetup()
   displayColor(COLOR_BLACK);
 }
 
-int scan() 
-{
-  // Look for new cards
+int scan() {
   if ( ! mfrc522.PICC_IsNewCardPresent()) 
   {
-    return;
+    return 0; // Look for new cards
   }
-  // Select one of the cards
   if ( ! mfrc522.PICC_ReadCardSerial()) 
   {
-    return;
+    return 0; // Select one of the cards
   }
   //Show UID on serial monitor
   Serial.print("UID tag :");
@@ -55,7 +51,8 @@ int scan()
     delay(500);
   }
  
- else   {
+ else   
+  {
     Serial.println("Access denied");
     return 0;
     delay(500);
@@ -69,10 +66,12 @@ int scan()
     delay(500);
     displayColor(COLOR_RED);
     delay(500);
-  }
+ }
+
 }
 
-void displayColor(byte color) {
+void displayColor(byte color) 
+{
   digitalWrite(PIN_LED_R, !bitRead(color, 2));
   digitalWrite(PIN_LED_G, !bitRead(color, 1));
   digitalWrite(PIN_LED_B, !bitRead(color, 0));

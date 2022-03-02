@@ -6,7 +6,7 @@
 
 const char* HOST = "maker.ifttt.com";
 
-const String PATH_NAME   = "/trigger/motion_detected/with/key/E9XwTRnSndghQxBALMPt0"; //make CONSTANT?
+const String PATH_NAME   = "/trigger/motion_detected/with/key/E9XwTRnSndghQxBALMPt0"; //make CONSTANT?;
 
 const char* WIFI_SSID = "kelly";
 const char* WIFI_PASS = "kelly123";
