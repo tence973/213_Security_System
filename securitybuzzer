@@ -1,4 +1,4 @@
-const int buzzer = 16; // GPIO pin for active buzzer
+const int buzzer = 32; // GPIO pin for active buzzer
 void setup() {
   pinMode(buzzer,OUTPUT); //initialize the buzzer pin as an output
 
